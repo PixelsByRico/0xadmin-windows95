@@ -1,596 +1,164 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<!--
-<article class="bootscreenDOS">
-  <div class="dos"></div>
-  <div class="splash" style="https://cdn1.alphr.com/sites/alphr/files/styles/insert_main_wide_image/public/1/59//xp-pc-command-boot.jpg?itok=4Pz2IAP6')"></div>
-</article> 
-
-
-  <article class="bootscreen">
-  <div class="dos"></div>
-  <div class="splash" style="background-image: url('https://i.ytimg.com/vi/QE18Lr_XVMY/hqdefault.jpg')"></div>
-</article>
--->
-
-
-  <div style="position: absolute; bottom: 50px; right: 5px; background: rgba(255,255,255,0.5); padding: 5px;">Windows 95 Online (ALPHA) <br>HTML5, Javascript, CSS3<br>Current Update December 16th 2021</div>
-<!-- browser -->
-<article class="window" id="app-browser" style="display: none; width: 90%; height:calc(90% - 90px); margin: auto; float: right;">
-  <section class="titlebar" id="app-title-browser"><i class=" fa fa-globe icon"></i> Internet Browser
-    <button onclick="appbrowserclose(); taskbuttonbrowser()"><i class="fa fa-window-close"></i></button>
-    <button style="display: none" id="restorebrowser" onclick="appbrowserrestore(); appbrowserrestoreb(); appbrowsermaxb();"><i class="fa fa-window-restore"></i></button>
-    <button onclick="appbrowsermax(); appbrowserrestoreb(); appbrowsermaxb();" id="maxbrowser"><i class="fa fa-window-maximize"></i></button>
-    <button onclick="appbrowsertog()"><i class="fa fa-window-minimize"></i></button>
-  </section>
-  <section class="windowmenu">
-  </section>
-  
-  <section class="appbody-nomenu" style="background-color: transparent; border: none;">
-  <script>window.onload=function() {
-    document.getElementById("form1").onsubmit=function() {
-    document.getElementById("iframeDiv").innerHTML='<iframe src="'+this.targetField.value+'"></iframe>';
-    return false;
-    }
-}</script>
-  <form id="form1" style="position: relative; top: -20px; z-index: 999;">
-  <input id="targetField" value="https://www.dogpile.com" width="80%"></input>
-  <button value="submit">load</button>
-</form>
-<div id="iframeDiv">
-    <iframe id="inlineFrame" style="position: absolute; top: 26px; width: 100%; height: calc(100% ); resize: none; background: white;" src="https://www.dogpile.com"></iframe>
-    </div>
-    <div class="windowmenutext">
-  </section>
-</article>
-
-<!-- calc -->
-<article class="window" id="app-calc" style="display: none; width: 400px; height: 450px; min-height: 450px; float: right;">
-  <section class="titlebar" id="app-title-calc"><i class=" fa fa-calculator icon"></i> Calculator
-    <button onclick="appcalcclose(); taskbuttoncalc()"><i class="fa fa-window-close"></i></button>
-    <button style="display: none" id="restorecalc" onclick="appcalcrestore(); appcalcrestoreb(); appcalcmaxb();"><i class="fa fa-window-restore"></i></button>
-    <button onclick="appcalcmax(); appcalcrestoreb(); appcalcmaxb();" id="maxcalc"><i class="fa fa-window-maximize"></i></button>
-    <button onclick="appcalctog()"><i class="fa fa-window-minimize"></i></button>
-
-  </section>
-  <section class="windowmenu">
-  </section>
-  <section class="appbody-nomenu" style="background-color: transparent; border: none;">
-    <style>
-      #calc {
-        width: 100%;
-        height: calc(100% + 30px);
-      }
-
-      #calc td {
-        border: 0px transparent;
-      }
-
-      input[type="button"] {
-        font-size: 20px;
-        height: 100%;
-        width: 100%
-      }
-
-      input[type="text"] {
-        font-size: 20px;
-        background-color: white;
-        border: solid black 2px;
-        height: 100%;
-        width: 100%
-      }
-    </style>
-    <table border="1" id="calc">
-      <tr>
-        <td colspan="3"><input type="text" id="result" /></td>
-        <!-- clr() function will call clr to clear all value -->
-        <td><button class="calcBtn" value="c" onclick="clr()" />C</button>
-        </td>
-      </tr>
-      <style>
-        .calcBtn {
-          height: 100%;
-          width: 100%;
-          position: relative;
-          left: -20px;
-        }
-      </style>
-      <tr>
-        <!-- create button and assign value to each button -->
-        <!-- dis("1") will call function dis to display value -->
-        <td><button class="calcBtn" value="1" onclick="dis('1')" />1</button>
-        </td>
-        <td><button class="calcBtn" value="2" onclick="dis('2')" />2</button>
-        </td>
-        <td><button class="calcBtn" value="3" onclick="dis('3')" />3</button>
-        </td>
-        <td><button class="calcBtn" value="/" onclick="dis('/')" />/</button>
-        </td>
-      </tr>
-      <tr>
-        <td><button class="calcBtn" value="4" onclick="dis('4')" />4</button>
-        </td>
-        <td><button class="calcBtn" value="5" onclick="dis('5')" />5</button>
-        </td>
-        <td><button class="calcBtn" value="6" onclick="dis('6')" />6</button>
-        </td>
-        <td><button class="calcBtn" value="-" onclick="dis('-')" />-</button>
-        </td>
-      </tr>
-      <tr>
-        <td><button class="calcBtn" value="7" onclick="dis('7')" />7</button>
-        </td>
-        <td><button class="calcBtn" value="8" onclick="dis('8')" />8</button>
-        </td>
-        <td><button class="calcBtn" value="9" onclick="dis('9')" />9</button>
-        </td>
-        <td><button class="calcBtn" value="+" onclick="dis('+')" />+</button>
-        </td>
-      </tr>
-      <tr>
-        <td><button class="calcBtn" value="." onclick="dis('.')" />.</button>
-        </td>
-        <td><button class="calcBtn" value="0" onclick="dis('0')" />0</button>
-        </td>
-        <!-- solve function call function solve to evaluate value -->
-        <td><button class="calcBtn" value="=" onclick="solve()" />=</button>
-        </td>
-        <td><button class="calcBtn" value="*" onclick="dis('*')" />*</button>
-        </td>
-      </tr>
-    </table>
-
-</article>
-
-
-
-<!-- paint -->
-<article class="window" id="app-paint" style="display: none; width: 400px; height: 600px; float: right;">
-  <section class="titlebar" id="app-title-paint"><i class=" fa fa-paint-brush"></i> Paint
-    <button onclick="apppaintclose(); taskbuttonpaint()"><i class="fa fa-window-close"></i></button>
-    <button style="display: none" id="restorepaint" onclick="apppaintestore(); apppaintrestoreb(); apppaintmaxb();"><i class="fa fa-window-restore"></i></button>
-    <button onclick="apppaintmax(); apppaintrestoreb(); apppaintmaxb();" id="maxpaint"><i class="fa fa-window-maximize"></i></button>
-    <button onclick="apppainttog()"><i class="fa fa-window-minimize"></i></button>
-  </section>
-  <section class="windowmenu">
-  </section>
-  <section class="appbody-nomenu" style="background-color: transparent; border: none;">
-    <div id="inlineFrame" style="position: absolute; top: 26px; width: 100%; height: calc(100% ); resize: none;">
-      
-
-	<div id="paint" style="position: absolute; top: 26px; width: 100%; height: calc(100% ); resize: none; display: block">
-		<div id="app">
-			<div id="left">
-				<div id="tools">
-					<ul style="position: relative; left: -20px; width: 80px;">
-<li><button type="button" disabled><img src="https://i.postimg.cc/N0XtfWcz/1.png" alt="" style="width: 80px"></button></li>
-<li><button type="button" data-action="select"></button></li>
-<li><button type="button" data-action="erase"></button></li>
-<li><button type="button" data-action="fill"></button></li>
-<li><button type="button" data-action="dropper"></button></li>
-<li><button type="button" disabled></button></li>
-<li><button type="button" data-action="pencil" class="active"></button></li>
-<li><button type="button" disabled></button></li>
-<li><button type="button" disabled></button></li>
-<li><button type="button" disabled></button></li>
-<li><button type="button" data-action="line"></button></li>
-<li><button type="button" disabled></button></li>
-<li><button type="button" data-action="square"></button></li>
-<li><button type="button" disabled></button></li>
-<li><button type="button" data-action="circle" disabled></button></li>
-<li><button type="button" disabled></button></li>
-</ul>
-				</div>
-			</div>
-			<div id="right">
-				<canvas id="c1"></canvas>
-				<canvas id="c2"></canvas>
-			</div>
-		</div>
-		<div id="bottom">
-			<div id="colors">
-				<div id="selected">
-					<div id="background"><button type="button" class="color white"></button></div>
-					<div id="foreground"><button type="button" class="color black"></button></div>
-				</div>
-				<div id="selection">
-					<ul>
-						<li><button type="button" data-color="#000000" class="color black"></button></li>
-						<li><button type="button" data-color="#777777" class="color darkgrey"></button></li>
-						<li><button type="button" data-color="#990000" class="color darkred"></button></li>
-						<li><button type="button" data-color="#999900" class="color darkyellow"></button></li>
-						<li><button type="button" data-color="#009900" class="color darkgreen"></button></li>
-						<li><button type="button" data-color="#009999" class="color darkaqua"></button></li>
-						<li><button type="button" data-color="#000099" class="color darkblue"></button></li>
-						<li><button type="button" data-color="#990099" class="color darkpink"></button></li>
-
-						
-						<li><button type="button" data-color="#ffffff" class="color white"></button></li>
-						<li><button type="button" data-color="#aaaaaa" class="color grey"></button></li>
-						<li><button type="button" data-color="#ff0000" class="color red"></button></li>
-						<li><button type="button" data-color="#ffff00" class="color yellow"></button></li>
-						<li><button type="button" data-color="#00ff00" class="color green"></button></li>
-						<li><button type="button" data-color="#00ffff" class="color aqua"></button></li>
-						<li><button type="button" data-color="#0000ff" class="color blue"></button></li>
-						<li><button type="button" data-color="#ff00ff" class="color pink"></button></li>
-
-					</ul>
-				</div>
-			</div>
-			<div id="help"></div>
-		</div>
-	</div>
-
-
-    </div>
-    <div class="windowmenutext"></div>
-  </section>
-</article>
-
-
-<!-- terminal -->
-<article class="window" id="app-terminal" style="display: none; width: 400px; height: 600px; float: right;">
-  <section class="titlebar" id="app-title-terminal"><i class=" fa fa-code icon"></i> Command Prompt
-    <button onclick="appterminalclose(); taskbuttonterminal()"><i class="fa fa-window-close"></i></button>
-    <button style="display: none" id="restoreterminal" onclick="appterminalrestore(); appterminalrestoreb(); appterminalmaxb();"><i class="fa fa-window-restore"></i></button>
-    <button onclick="appterminalmax(); appterminalrestoreb(); appterminalmaxb();" id="maxterminal"><i class="fa fa-window-maximize"></i></button>
-    <button onclick="appterminaltog()"><i class="fa fa-window-minimize"></i></button>
-  </section>
-  <section class="windowmenu">
-  </section>
-  <section class="appbody-nomenu" style="background-color: transparent; border: none;">
-    <div class="terminal"><div class="stream"></div>
-<div class="line editline">
-   <p class="time"></p>
-   <p class="name">&gt;</p>
-   <p contenteditable="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="information edit"></p>
-</div>
-</div>
-    <div class="windowmenutext">
-  </section>
-</article>
-
-
-
-<!-- notepad -->
-<script>
-function notepadReadMe() {
-document.getElementById("notepad").value = "Read Me! Take a moment to admire that you are reading this in notepad on a fake web based Windows 95.   You can even delete this text and type over it. This is an HTML5, CSS, and JS, imitation of Windows 95. I am working to get this as close as possible to the real thing. So far it features classic scrollbars and buttons, and much of the classic style. It also features the ability to drag and resize windows, fully functional window controls on the title bar, and a full-screen button on the task bar to complete the effect. Soon to come: More applications, functional text menus, start menu, themes, folders, ability to create and print files, blue screen of death, and so on. Some Window Controls are wonkey.";
-}
-  function notepadTip() {
-document.getElementById("notepad").value = "Only use this system for it's intended and official opperation.";
-}
-  function notepadBook1() {
-document.getElementById("notepad").value = "Book 1 text goes here";
-}
-   function notepadWhatsNew() {
-document.getElementById("notepad").value = "What is new here?";
-} 
-  
-</script>
-<article class="window" id="app-test" style="display: none; width: 400px; height: 300px; float: right;">
-  <section class="titlebar" id="app-title-test"><i class=" fa fa-edit icon"></i> Notepad
-    <button onclick="apptestclose(); taskbuttontest()"><i class="fa fa-window-close"></i></button>
-    <button style="display: none" id="restoretest" onclick="apptestrestore(); apptestrestoreb(); apptestmaxb();"><i class="fa fa-window-restore"></i></button>
-    <button onclick="apptestmax(); apptestrestoreb(); apptestmaxb();" id="maxtest"><i class="fa fa-window-maximize"></i></button>
-    <button onclick="apptesttog()"><i class="fa fa-window-minimize"></i></button>
-
-  </section>
-  <section class="windowmenu">
-  </section>
-
-  <section class="appbody-nomenu" style="background-color: transparent; border: none;">
-    <form name="CryptoForm">
-      <script>
-      var alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var code = "";
-function reset() {    document.CryptoForm.PlainText.value = "";
-}
-function Revelation() {   	
-result = "SPHINXOFBLACKQURTZJDGEMYVW";  
-	for (var i=0; i<25; i++){
-		alpha = result  	
-	}
-	result+=alpha.charAt(25);
-	return result;  
-}
-function Encode() {	
-	plaintext = document.CryptoForm.PlainText.value.toUpperCase();
-	ciphertext = "";
-	alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	for (var i=0; i<plaintext.length; i++) {
-	 thisChar = plaintext.charAt(i);
-	 ind = alpha.indexOf(thisChar);
-	 if (ind == -1)
-		ciphertext += thisChar;
-		else
-		ciphertext += code.charAt(ind);
-	} document.CryptoForm.PlainText.value = ciphertext;
-	return ciphertext; 
-}
-function Decode() {
-	ciphertext = document.CryptoForm.PlainText.value.toUpperCase();
-	plaintext = "";
-	alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	for (var i=0; i<ciphertext.length; i++) {
-	 thisChar = ciphertext.charAt(i);
-	 ind = code.indexOf(thisChar);
-	 if (ind == -1)
-		plaintext += thisChar;
-		else
-		plaintext += alpha.charAt(ind);
-	}
-document.CryptoForm.PlainText.value = plaintext;
-	return plaintext; 
-}
-      </script>
-      <script>
-        $("#notepad").load("http://golgothabridge.com/visitors.html ");
-      </script>
-      <textarea id="notepad" name="PlainText" style="position: absolute; top: 26px; width: 100%; height: calc(100% ); resize: none;"> 
-  
-  </textarea>
-      <div class="windowmenutext">
-
-        <table style="table-layout: auto;" >
-          <tr>
-            <td>
-              <div class="dropdown1">
-                <div class="dropbtn1"><u>F</u>ile</div>
-                <div class="dropdown-content1">
-                  <a href="#" onclick="Encode()">Open</a>
-                  <a href="#">Save</a>
-                  <a href="#" style"color:gray;">Print</a>
-                </div>
-            </td>
-            <td>
-              <div class="dropdown1">
-                <div class="dropbtn1"><u>E</u>dit</div>
-                <div class="dropdown-content1">
-                  <a href="#" onclick="copyText()">Copy</a>
-                  <a href="#">Paste</a>
-                  <a href="#" onclick="Encode()">Encrypt</a>
-                  <a href="#" onclick="Encode()">Decrypt</a>
-                  <a href="#" onclick="reset()">Erase</a>
-                 
-                </div>
-            </td>
-            <td style="max-width: 55px; width: 50px;">
-              <div class="dropdown1">
-                <div class="dropbtn1" style="max-width: 50px; width: 55px;"><u>F</u>ormat</div>
-                <div class="dropdown-content1">
-                  <a href="#">Font</a>
-                  <a href="#">Size</a>
-                  <a href="#"></a>
-                </div>
-            </td>
-
-            <td>
-              <div class="dropdown1">
-                <div class="dropbtn1"><u>H</u>elp</div>
-                <div class="dropdown-content1">
-                  <a href="#">About</a>
-                </div>
-            </td>
-
-          </tr>
-        </table>
-    </form>
-  </section>
-</article>
-  
-  
-  
-  
-
-<!-- welcome -->
-<article class="window" id="app-welcome" style="height: 340px; width: 680px; position: absolute; top: 100px; bottom: 0; left: 100px; right: 0; resize: none !important;">
-  <section class="titlebar" id="app-title-welcome"><i class=" fab fa-windows icon"></i> Welcome
-    <button onclick="appwelcomeclose(); taskbuttonwelcome()"><i class="fa fa-window-close"></i></button>
-
-    <button onclick="appwelcometog()"><i class="fa fa-window-minimize"></i></button>
-  </section>
-  <section class="windowmenu">
-  </section>
-
-  <section class="appbody-nomenu" style="border: 0px; background: var(--ThreeDFace); align: Left">
-    <div style="width: 430px; position: ; right: 0px; top: 0px; height: 200px; align: center; float: left;">
-      <h1 style="font-size: 28px; margin: 8px; margin-top: 15px; margin-bottom: 15px;">Welcome to Windows 95</h1>
-      <div class="clock" style="background: lightyellow; margin: 1px; height: 130px; position: relative ; overflow: scroll; font-size: 18px; line-height: 30px; margin-bottom: 10px; display: block;" id="welcome0">
-        Did you know that this web site exhibits many of the features possessed by Windows 95; including (but not limited to) the abality to drag windows by the title bar, toggle the window via the minimize button and/or the taskbar button, maximize and restore the window, and close the window via the <i class="fa fa-window-close"></i> button. More features are coming soon.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+  <script src="./script.js"></script>
+</head>
+<body>
+  <script src="https://kit.fontawesome.com/bc9d954da2.js" crossorigin="anonymous"></script>
+  <div class="top-container">
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">0xadmin</div>
       </div>
-      <div class="clock" style="background: lightyellow; margin: 1px; height: 130px; position: relative ; overflow: scroll; font-size: 18px; line-height: 30px; margin-bottom: 10px; display: none;" id="welcome1">
-
-        Now you are onto something.
-
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
       </div>
-      <br> <span style="font-size: 20px; float: left; line-height: 30px;"><input type="checkbox" class="checkbox" style="" />Please <a style="color: green;" href="http://www.golgothabridge.com/about/donate"  target=”_blank” >click here</a> to tip the devoloper. </span>
+
+      <div class="nav-links">
+        <a href="#about">&#x3C About /&#x3E</a>
+        <a href="#skills">&#x3C Skills /&#x3E</a>
+        <a href="#projects">&#x3C Projects /&#x3E</a>
+        <a href="#contact">&#x3C Contact /&#x3E</a>
+      </div>
     </div>
-    .<div style="width: 210px; position: relative ; right: 10px; top: 1px; height: 190px; align: center; float: right; padding"><br>
-      <div class="button welcomelist" onclick="notepadWhatsNew(); taskbuttontestopen(); apptestopen(); "> What's <u>N</u>ew </div>
-      <div class="button welcomelist" onClick="toggleFullScreen();" > Toggle FullScreen </div>
-      <div class="button welcomelist"  onClick="notepadTip();  taskbuttontestopen(); apptestopen(); "> Next Tip </div>
-      <br>
-      <hr>
-      <div class="button welcomelist" onclick="appwelcomeclose(); taskbuttonwelcome()"> Close </div>
+
+    <div class="console-container">
+      <p class="intestazizone-console">0xadmin@root~:$</p>
+      <p class="type-animation">
+        cat presentation.txt<span id="cursore">|</span>
+      </p>
+      <br />
+      <p id="presentazione" class="presentazione">
+        Hello! We are currently working on bringing more tools for creators to web3!<br />.<br />.<br />.<br />.<br />
+        ᐁᐁᐁ We might soon be very busy and unavailable. ᐁᐁᐁ
+      </p>
     </div>
-  </section>
-  <section class="status">
+
+    <div class="small-display">
+      <div>
+        <p>Projects in the making</p>
+        <p>ᐁᐁᐁ 0x2djsa002020 ᐁᐁᐁ</p>
+      </div>
     </div>
-    <b> Status:</b> This is an early work in process...
-  </section>
+  </div>
 
-</article>
-
-
-<!-- mediaplayer -->
-<article class="window" id="app-media" style="display: none ; width: 400px; height: 300px; float: right;">
-  <section class="titlebar" id="app-title-media"><i class=" fa fa-video icon"></i> Windows Media Player
-    <button onclick="appmediaclose(); taskbuttonmedia()"><i class="fa fa-window-close"></i></button>
-    <button style="display: none" id="restoremedia" onclick="appmediarestore(); appmediarestoreb(); appmediamaxb();"><i class="fa fa-window-restore"></i></button>
-    <button onclick="appmediamax(); appmediarestoreb(); appmediamaxb();" id="maxmedia"><i class="fa fa-window-maximize"></i></button>
-    <button onclick="appmediatog()"><i class="fa fa-window-minimize"></i></button>
-
-  </section>
-  <section class="windowmenu">
-  </section>
-
-  <section class="appbody-nomenu" style="background-color: transparent; border: none;">
-    <form name="CryptoForm">
-
-      <script>
-        $("#mediaplayer").load("http://golgothabridge.com/visitors.html ");
-      </script>
-      <iframe style="position: absolute; top: 26px; width: 100%; height: calc(100% ); resize: none;"  src="https://www.youtube.com/embed/YX2SKHvv7h4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="windowmenutext">
-
-        <table style="table-layout: auto;">
-          <tr>
-            <td>
-              <div class="dropdown1">
-                <div class="dropbtn1"><u>F</u>ile</div>
-                <div class="dropdown-content1">
-                  <a href="#" onclick="Encode()" class="greytext">Open</a>
-                  <a href="#">Save</a>
-                </div>
-            </td>
-
-            <td style="max-width: 55px; width: 50px;">
-              <div class="dropdown1">
-                <div class="dropbtn1" style="max-width: 50px; width: 55px;"><u>F</u>ormat</div>
-                <div class="dropdown-content1">
-                  <a href="#">Font</a>
-                  <a href="#">Size</a>
-                  <a href="#"></a>
-                </div>
-            </td>
-
-            <td>
-              <div class="dropdown1">
-                <div class="dropbtn1"><u>H</u>elp</div>
-                <div class="dropdown-content1">
-                  <a href="#">About</a>
-                </div>
-            </td>
-
-          </tr>
-        </table>
-    </form>
-  </section>
-</article>
-  
-  
-  
-  <!-- FolderDoc -->
-<article class="window" id="app-FolderDoc" style="display: none; width: 400px; height: 600px; float: right; position: relative; right: -100px;">
-  <section class="titlebar" id="app-title-FolderDoc"><i class=" fa fa-folder icon"></i> Documents
-    <button onclick="appFolderDocclose(); taskbuttonFolderDoc()"><i class="fa fa-window-close"></i></button>
-    <button style="display: none" id="restoreFolderDoc" onclick="appFolderDocrestore(); appFolderDocrestoreb(); appFolderDocmaxb();"><i class="fa fa-window-restore"></i></button>
-    <button onclick="appFolderDocmax(); appFolderDocrestoreb(); appFolderDocmaxb();" id="maxFolderDoc"><i class="fa fa-window-maximize"></i></button>
-    <button onclick="appFolderDoctog()"><i class="fa fa-window-minimize"></i></button>
-  </section>
-  <section class="windowmenu">
-  </section>
-  <section class="appbody-nomenu" style="background-color: transparent; border: none;">
-    <div class="desktop" style="position: absolute; top: 0px; z-index: 999; left: -10px; width: 100%; height: calc(100% ); resize: none; background: white;" >
-        <div class="icon" style="width: 100px;" id="desktopIcon1" onclick="notepadReadMe(); taskbuttontestopen(); apptestopen(); "><img src="https://telegram-stickers.github.io/public/stickers/windows-95/2.png"></img><span class="icontext" style=" color: black;" >ReadMe.txt</span></div>
-    <div class="icon" style="width: 100px;" id="desktopIcon1" onclick="notepadBook1(); taskbuttontestopen(); apptestopen(); "><img src="https://telegram-stickers.github.io/public/stickers/windows-95/2.png"></img><span class="icontext" style=" color: black;">Book1.txt</span></div>
-      
-    </div>
-    <div class="windowmenutext">
-  </section>
-</article>
-  
-
-<!-- desktop -->
-  
-
-  
-  
-<div class="desktop max-height wrap column nospace">
-  <div class="icon"  onClick="appFolderDocopen(); taskbuttonFolderDocopen();"><img src="https://telegram-stickers.github.io/public/stickers/windows-95/4.png"></img><span class="icontext">Documents</span></div>
-  <div class="icon" onClick="BSOD();"><img src="https://telegram-stickers.github.io/public/stickers/windows-95/4.png"></img><span class="icontext" onClick="BSOD();">Pictures</span></div>
-  <div class="icon"  onClick="BSOD();"><img src="https://telegram-stickers.github.io/public/stickers/windows-95/4.png"></img><span class="icontext">Settings</span></div>
-  <div class="icon"  id="desktopIcon1" onclick="notepadReadMe(); taskbuttontestopen(); apptestopen(); "><img src="https://telegram-stickers.github.io/public/stickers/windows-95/2.png"></img><span class="icontext">ReadMe.txt</span></div>
-
-</div>
-
-<article class="taskbar">
-  <!-- <a id="start" href="#"></a> -->
-  <ul class="top-level-menu" style="z-index: 9999">
-    <li>
-      <button href="#" onclick="startmenu()"><img src="https://vignette.wikia.nocookie.net/logopedia/images/3/32/Microsoft_Windows_Compatible_Icon.png/revision/latest?cb=20160806162438" style="width: 22px; height: 18px; float: left;" title="Click here to begin" class="StartButton"> Start</button>
-      <ul id="startmenu" class="second-level-menu StartMenu">
-        <div style="transform: rotate(270deg);
-	transform-origin: left top 0; position: absolute; left: 0px; bottom: -33px; width: 346px;  background: var(--StartBar); font-size: 30px; text-align: left; "><b><span style="color: var(--StartBar)">_ </span> <span style="color: var(--ThreeDFace)">Windows</span><span style="color: var(--HighlightText)"> 95 </span></b>
+  <!-- SEZIONE ABOUT -->
+  <div id="about" class="container-a">
+    <h1>&#x3C About /&#x3E</h1>
+    <div class="wrapper">
+      <div class="image-container">
+        <div class="vertical">
+          <img
+          src="https://media-exp1.licdn.com/dms/image/C4E03AQFiFfpFiXf4UA/profile-displayphoto-shrink_200_200/0/1614462592136?e=1619654400&v=beta&t=lS12PVRdQGBztuHxILkZVKfcnsqKeohGBMabQf0SyRw"
+          alt="foto profilo"
+          class="responsive-img"
+        />
         </div>
+        
+      </div>
+      <div class="paragrafo ">
+        <p>Se sei qui significa che stai cercando di capire qualcosa in piu' su di me, quindi per farla
+          breve eccoti una mia descrizione molto concisa. Sono uno studente universitario che frequenta il
+          corso di <a href="https://www.unimi.it/it/corsi/corsi-di-laurea/sicurezza-dei-sistemi-e-delle-reti-informatiche" target="_blank">Sicurezza dei Sistemi e delle Reti Informatiche</a> 
+          presso <a href="www.unimi.it" target="_blank">l'Università degli Studi di Milano</a> 
+          (attualmente sono al primo anno). Ho conseguito il diploma presso 
+          <a href="www.itisfeltrinelli.edu.it" target="_blank">l'Istituto Tecnico Industriale G. Feltrinelli</a> (ITIS),
+          specializzandomi in <b>Informatica e Telecomunicazioni</b>.
+          Sono un ragazzo molto conciso, pragmatico e calmo... non mi vengono in mente altri aggettivi.
+          Al momento non dispongo di un grande bagaglio di esperienza lavorativa, ma lo sto lentamente accumulando.
+          Riassunto in breve:<b> una giovane risorsa ancora in erba con molta curiosità e ottime capacità.</b>
+        </p>
+      </div>
+    </div>
+    
+    
+  </div>
 
-        <li><a href="#">
-            <div style=""></div><img src="https://cdn130.picsart.com/352685571021211.png" style=""> Programs<span style="float: right; position: absolute; right: 15px;"><i class="fa fa-caret-right"></i></span>
-          </a>
-          <ul class="third-level-menu Menu">
-            <li> <a href="#" onclick="taskbuttonbrowseropen(); appbrowseropen(); startmenu()"><i class="fa fa-globe"></i> Internet Explorer</a> </li>
-            <li>
-              <a href="#" onclick="taskbuttoncalcopen(); appcalcopen(); startmenu()"><i class="fa fa-calculator"></i> Calculator</a>
-            </li> 
-            <li>
-              <a href="#" onclick="taskbuttonmediaopen(); appmediaopen(); startmenu()"><i class="fa fa-video"></i> Media Player</a>
-            </li>
-            <li><a href="#" onclick="taskbuttontestopen(); apptestopen(); startmenu()"><i class="fa fa-edit"></i> Notepad</a></li>
-            
-              <li><a href="#" onclick="taskbuttonterminalopen(); appterminalopen(); startmenu()"><i class="fa fa-code"></i> Command Prompt</a></li>
+  <!-- SEZIONE SKILL -->
+  <div class="container-a">
+    <div id="skills" class="container-b">
+      <h1>&#x3C Skills /&#x3E</h1>
+      <h3>Le mie principali competenze</h3>
+      <div class="wrapper">
+        <div class="paragrafo">
+          <h4>Linguaggi</h4>
+        <ul>
+          <li>Java</li>
+          <li>C</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>PHP</li>
+          <li>SQL (RDBMS MySQL)</li>
+          <li>Python</li>
+        </ul>
+  
+          <h4>Sistemi Operativi</h4>
+        <ul>
+          <li>Windows</li>
+          <li>Linux</li>
+        </ul>
+        </div>
+  
+        <div class="paragrafo">
+          <h4>Qualcosa in piu'</h4>
+          <p class="skill-info">Ho dimestichezza con ognuna delle competenze elencate, anche se quella principale è <b>Java</b>.
+          Come si puo vedere per adesso sono specializzato nella programmazione, ergo sono un <b>developer</b>.
+          Arrivando da un tecnico informatico ho sviluppato anche molte competenze pratiche conseguendo certificazioni EDCL:
+          <b>Computer Essential</b> e <b>IT Security</b>; CISCO: <b>CCNA Routing and Switching</b>, <b>CCNA IT Essential</b> e
+          <b>CCNA1 Introduction to Networks</b>.
+          Punto a specializzarmi nell'ambito della sicurezza informatica, di cui i campi che piu' mi
+          intaressano sono: <a href="https://en.wikipedia.org/wiki/Network_security" target="_blank">Nerwork Security</a>,
+           <a href="https://it.wikipedia.org/wiki/Digital_forensics" target="_blank">Forensics</a>, 
+           <a href="https://en.wikipedia.org/wiki/Web_application_security" target="_blank">Web App Security</a> e 
+           <a href="https://en.wikipedia.org/wiki/Secure_coding" target="_blank">Secure Coding</a>.
+          Ho inoltre un discreto interesse per l'<a href="https://it.wikipedia.org/wiki/Intelligenza_artificiale" target="_blank">AI</a>, 
+          in particolare applicata all'ambito dell'analisi di informazioni legate alla cybersecurity.
+        </p>
+      </div>
+      </div>
+      
+    </div>
+  </div>
 
-            
-            <li>
-              <a href="#" onclick="taskbuttonpaintopen(); apppaintopen(); startmenu()"><i class="fas fa-paint-brush"></i> Paint</a>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#">
-            <div style=""></div><img src="https://telegram-stickers.github.io/public/stickers/windows-95/4.png">Documents<span style="float: right; position: absolute; right: 15px;"><i class="fa fa-caret-right"></i></span>
-          </a>
-          <ul class="third-level-menu Menu">
-            <li><a href="#" onclick="notepadReadMe(); taskbuttontestopen(); apptestopen(); startmenu()">Information</a></li>
-            <li><a href="#" onclick="notepadBook1(); taskbuttontestopen(); apptestopen(); startmenu()">Book 1</a></li>
-          </ul>
-        </li>
-        <li><a href="#">
-            <div style=""></div><img src="https://telegram-stickers.github.io/public/stickers/windows-95/22.png">Settings<span style="float: right; position: absolute; right: 15px;"><i class="fa fa-caret-right"></i></span>
-          </a>
-          <ul class="third-level-menu Menu">
-            <li><a href="#">Information</a></li>
-            <li><a href="#">Sign Up</a></li>
-          </ul>
-        </li>
-        <hr>
-        <li><a href="javascript:window.location.href=window.location.href" onClick='window.location.reload(); startmenu()'><i class="fa fa-circle-notch"></i> Restart</a></li>
-        <li><a href="#" onClick='toggleFullScreen(); startmenu()'><i class="fa fa-power-off"></i> Shutdown</a></li>
-      </ul>
-    </li>
-  </ul>
+  <!-- SEZIONE PROJECTS -->
+  <div id="projects" class="container-a">
+    <h1>&#x3C Projects /&#x3E</h1>
+    <div class="vert-align">
+      <p class="error">:(</p>
+      <p>Al momento non sono presenti progetti degni di nota.</p>
+      <p>Per adesso...</p>
+    </div>
+  </div>
 
-  <subject class="tasktray">
+  <!-- SEZIONE CONTACT -->
+  <div id="contact" class="footer-container">
+    <div class="footer">
+      <h1>&#x3C Contact /&#x3E</h1>
+      <p>Puoi contattarmi su <a class="email" href="mailto:giuseppedeleo160@gmail.com">giuseppedeleo160@gmail.com</a></p>
+      <p>oppure puoi raggiungermi su</p>
+      <div class="icon-container">
+        <a class="icon" href="https://www.instagram.com/_geppoo_/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a class="icon" href="https://www.linkedin.com/in/giuseppe-de-leo-533735190/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a class="icon" href="https://codepen.io/geppoo" target="_blank"><i class="fab fa-codepen"></i></a>
+        <a class="icon" href="https://github.com/geppoo" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+      
+    </div>
+  </div>
+  
 
-    <button class="taskbutton" style="display:none;" onclick="appbrowsertog()" id="taskbutton-browser"><i class="fa fa-globe"></i> Browser</button>
-    <button class="taskbutton" style="display:none;" onclick="appcalctog()" id="taskbutton-calc"><i class="fa fa-calculator"></i> Calculator</button>
-    <button class="taskbutton" style="display:none;" onclick="apptesttog()" id="taskbutton-test"><i class="fa fa-edit"></i> Notepad</button>
-        <button class="taskbutton" style="display:none;" onclick="appterminaltog()" id="taskbutton-terminal"><i class="fa fa-code"></i> Command Prompt</button>
-    <button class="taskbutton" style="display:none;" onclick="appFolderDoctog()" id="taskbutton-FolderDoc"><i class="fa fa-folder"></i> Documents</button>
-    <button class="taskbutton" style="display:none;" onclick="apppainttog()" id="taskbutton-paint"><i class="fa fa-draw"></i> Paint</button>
-    <button class="taskbutton" onclick="appwelcometog()" id="taskbutton-welcome"><i class="fab fa-windows"></i> Welcome</button>
-    <button class="taskbutton" style="display:none;" onclick="appmediatog()" id="taskbutton-media"><i class="fa fa-video"></i> Windows Media Player</button>
+</body>
 
-  </subject>
-  <subject class="clock">
-    <div id="time"></div>
-  </subject>
-</article>
+</html>
 
-
-
-
-<article class="BSOD" id="BSOD">
-  <div class="dos"></div>
-  <div class="splash" style="')"></div>
-</article> 
-</div>
